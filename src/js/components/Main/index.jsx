@@ -1,5 +1,5 @@
-import BarChart from 'js/components/BarChart';
-import ScatterPlot from 'js/components/ScatterPlot';
+import BarChart from "js/components/BarChart";
+import ScatterPlot from "js/components/ScatterPlot";
 
 const Main = () => {
   return (
@@ -9,6 +9,6 @@ const Main = () => {
       <ScatterPlot />
     </>
   );
-}
+};
 
 export default Main;
