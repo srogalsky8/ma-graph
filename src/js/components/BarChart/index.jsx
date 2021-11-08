@@ -38,8 +38,8 @@ const data = [
 function BarChart() {
   const ref = useD3(
     (svg) => {
-      const height = 500;
-      const width = 500;
+      const height = window.innerWidth;
+      const width = window.innerHeight;
       const margin = { top: 20, right: 30, bottom: 30, left: 40 };
 
       const x = d3
