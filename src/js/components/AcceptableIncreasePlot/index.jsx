@@ -1,9 +1,22 @@
 import useD3 from "js/hooks/useD3";
 import { useEffect, useState } from "react";
 import * as d3 from "d3";
-import { initializeLines, addPastMonthly, addPastIncrease, addPastArea, addForecast, addForecastIncrease, addForecastArea } from "./lines";
+import {
+  initializeLines,
+  addPastMonthly,
+  addPastIncrease,
+  addPastArea,
+  addForecast,
+  addForecastIncrease,
+  addForecastArea,
+} from "./lines";
 import { createLegend } from "./legend";
-import { PlotHeader, PlotContainer, SvgContainer, SvgContent } from "./index.styled";
+import {
+  PlotHeader,
+  PlotContainer,
+  SvgContainer,
+  SvgContent,
+} from "./index.styled";
 
 // convert to date and floats
 const mapRaw = (row) => {
@@ -26,7 +39,10 @@ const AcceptableIncreasePlot = () => {
 
   useEffect(() => {
     const getPastData = async () => {
-      const values = await d3.csv("/datasets/Past.csv", mapRaw);
+      const values = await d3.csv(
+        `${process.env.PUBLIC_URL}/datasets/Past.csv`,
+        mapRaw
+      );
       setPastData(values);
     };
     getPastData();
@@ -34,7 +50,10 @@ const AcceptableIncreasePlot = () => {
 
   useEffect(() => {
     const getFutureData = async () => {
-      const values = await d3.csv("/datasets/Future.csv", mapRawFuture);
+      const values = await d3.csv(
+        `${process.env.PUBLIC_URL}/datasets/Future.csv`,
+        mapRawFuture
+      );
       setFutureData(values);
     };
     getFutureData();
@@ -76,7 +95,7 @@ const AcceptableIncreasePlot = () => {
 
         svg
           .attr("preserveAspectRatio", "xMinYMin meet")
-          .attr("viewBox", `0 0 ${width} ${height}`)
+          .attr("viewBox", `0 0 ${width} ${height}`);
 
         svg
           .append("g")
@@ -105,8 +124,12 @@ const AcceptableIncreasePlot = () => {
           );
 
         initializeLines({
-          svg, pastData, futureData, xScale, yScale
-        })
+          svg,
+          pastData,
+          futureData,
+          xScale,
+          yScale,
+        });
         addPastMonthly();
         addPastIncrease();
         addPastArea();
@@ -125,9 +148,7 @@ const AcceptableIncreasePlot = () => {
       <PlotHeader>Sample Plot using ReactJS and d3.js</PlotHeader>
       <PlotContainer>
         <SvgContainer>
-          <SvgContent
-            ref={ref}
-          />
+          <SvgContent ref={ref} />
         </SvgContainer>
       </PlotContainer>
     </>

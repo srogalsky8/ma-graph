@@ -6,12 +6,13 @@
 2. Navigate to this directory and run `npm install`
 3. Build the project using `npm run build`
 4. Serve the project on your local machine using:
+
 ```
   npm install -g serve
   serve -s build
 ```
-By default the project should be running on http://localhost:3000
 
+By default the project should be running on http://localhost:3000
 
 ## Available Scripts
 

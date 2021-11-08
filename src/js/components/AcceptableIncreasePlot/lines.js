@@ -2,14 +2,13 @@ import * as d3 from "d3";
 
 let _svg, _pastData, _futureData, _xScale, _yScale;
 
-
 const initialize = ({ svg, pastData, futureData, xScale, yScale }) => {
   _svg = svg;
   _pastData = pastData;
   _futureData = futureData;
   _xScale = xScale;
   _yScale = yScale;
-}
+};
 
 const addPastMonthly = () => {
   // Add past monthly points
@@ -23,7 +22,7 @@ const addPastMonthly = () => {
     .attr("cx", ({ x1 }) => _xScale(x1))
     .attr("cy", ({ y1 }) => _yScale(y1))
     .attr("r", 2);
-}
+};
 
 const addPastIncrease = () => {
   const line = d3
@@ -41,11 +40,11 @@ const addPastIncrease = () => {
     .attr("stroke-linejoin", "round")
     .attr("stroke-opacity", 1)
     .attr("d", line);
-}
+};
 
 const addPastArea = () => {
-    // fill area between lines
-    const area = d3
+  // fill area between lines
+  const area = d3
     .area()
     .x(({ x1 }) => _xScale(x1))
     .y0(({ y1 }) => _yScale(y1))
@@ -57,7 +56,7 @@ const addPastArea = () => {
     .attr("d", area)
     .style("fill", "#4646ff")
     .style("opacity", 0.4);
-}
+};
 
 const addForecast = () => {
   const line = d3
@@ -77,7 +76,7 @@ const addForecast = () => {
     .attr("stroke-linejoin", "round")
     .attr("stroke-opacity", 1)
     .attr("d", line);
-}
+};
 
 const addForecastIncrease = () => {
   const line = d3
@@ -96,7 +95,7 @@ const addForecastIncrease = () => {
     .attr("stroke-linejoin", "round")
     .attr("stroke-opacity", 1)
     .attr("d", line);
-}
+};
 
 const addForecastArea = () => {
   const area = d3
@@ -111,6 +110,14 @@ const addForecastArea = () => {
     .attr("d", area)
     .style("fill", "#05fefe")
     .style("opacity", 0.3);
-}
+};
 
-export { initialize as initializeLines, addPastMonthly, addPastIncrease, addPastArea, addForecast, addForecastIncrease, addForecastArea }
+export {
+  initialize as initializeLines,
+  addPastMonthly,
+  addPastIncrease,
+  addPastArea,
+  addForecast,
+  addForecastIncrease,
+  addForecastArea,
+};

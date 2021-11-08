@@ -1,9 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const PlotHeader = styled.h2`
   text-align: center;
-`
-
+`;
 
 const PlotContainer = styled.div`
   width: 100%;
