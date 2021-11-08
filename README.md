@@ -1,6 +1,17 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demoing on your machine
+
+1. Download and install nodejs and npm: https://nodejs.org/en/download/
+2. Navigate to this directory and run `npm install`
+3. Build the project using `npm run build`
+4. Serve the project on your local machine using:
+```
+  npm install -g serve
+  serve -s build
+```
+By default the project should be running on http://localhost:3000
+
 
 ## Available Scripts
 

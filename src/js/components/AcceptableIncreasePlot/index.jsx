@@ -122,7 +122,7 @@ const AcceptableIncreasePlot = () => {
 
   return (
     <>
-      <PlotHeader>Sample Plot using React.js and d3.js</PlotHeader>
+      <PlotHeader>Sample Plot using ReactJS and d3.js</PlotHeader>
       <PlotContainer>
         <SvgContainer>
           <SvgContent
